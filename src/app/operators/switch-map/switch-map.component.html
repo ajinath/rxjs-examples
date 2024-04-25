@@ -1,0 +1,25 @@
+<div class="search-input"> 
+    <input type="text" [formControl]="searchStr" placeholder="Enter search string"/>
+</div>
+
+<div *ngIf="loading"> 
+    <em> Loading ... </em>
+</div>
+
+<div *ngIf="searchResult$ | async as searchResult">
+    <ng-container *ngIf="!loading && searchResult.length else noData">
+        <ul *ngFor="let search of searchResult">
+            <li> {{ search.identifier }} - {{ search.name }} - {{ search.description  }}</li>
+        </ul>
+    </ng-container>
+</div>
+
+
+<ng-template #noData>
+    <em *ngIf="!loading"> No Data found </em>
+</ng-template>
+
+
+<ng-template #placeholderText>
+    <em *ngIf="!loading"> Start type to get search result </em>
+</ng-template>

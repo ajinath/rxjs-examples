@@ -1,0 +1,10 @@
+.search-input {
+
+    margin: 1rem 0 1rem 0;
+
+    input { 
+        width: 10rem;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+    }
+}
