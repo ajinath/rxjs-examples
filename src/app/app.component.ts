@@ -1,24 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from './app.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'rxjs-examples';
 
-  constructor(private readonly appService: AppService) {
+  constructor() {
 
   }
-
-  ngOnInit(): void {
-    console.log("app component")
-    // this.appService.getPosts().subscribe((posts) => {
-    //   console.log(posts)
-    // });
-  }
-
 
 }
