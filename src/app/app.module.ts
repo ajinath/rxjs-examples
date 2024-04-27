@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SwitchMapComponent } from './operators/switch-map/switch-map.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MergeMapComponent } from './operators/merge-map/merge-map.component';
+import { ConcatMapComponent } from './operators/concat-map/concat-map.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MergeMapComponent } from './operators/merge-map/merge-map.component';
     ShareComponent,
     SwitchMapComponent,
     SwitchMapComponent,
-    MergeMapComponent
+    MergeMapComponent,
+    ConcatMapComponent
   ],
   imports: [
     BrowserModule,

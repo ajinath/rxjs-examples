@@ -43,11 +43,17 @@ export class AppService {
     );
   }
 
-  getPostById(postId: number, index: number) {
+  getPostById(postId: number) {
     return this.http.get<any>(`${this.host}/posts/${postId}`).pipe(
-      map(post => {
-        return { post, index }
-      }),
+      catchError((err) => { 
+        console.log("ERROR: search data", err);
+        return of({});
+      })
+    );
+  }
+
+  getCommentsByPostId(postId: number) {
+    return this.http.get<any>(`${this.host}/posts/${postId}/comments`).pipe(
       catchError((err) => { 
         console.log("ERROR: search data", err);
         return of({});

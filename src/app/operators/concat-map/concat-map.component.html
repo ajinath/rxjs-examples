@@ -1,0 +1,13 @@
+<div *ngIf= "post$ | async as post">
+    <div> {{ post.id }} - {{ post.body }} </div>
+</div>
+
+<div> 
+    <h3> Comments </h3>
+    <div *ngIf="loading"> Loading ... </div>
+    <div *ngIf= "(comments$ | async) as comments">
+        <ul *ngFor="let comment of comments">
+            <li> {{ comment.name }} - {{ comment.body }}  </li>
+        </ul>
+    </div>
+</div>

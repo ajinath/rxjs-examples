@@ -24,7 +24,11 @@ export class MergeMapComponent implements OnInit {
     let sequenceNumber = 0;
     const posts:any = [];
     from(postsIds).pipe(
-      mergeMap((postId: number, index: number) => this.appService.getPostById(postId, index)),
+      mergeMap((postId: number, index: number) => 
+        this.appService.getPostById(postId).pipe(map(post => { 
+          return { post, index }
+        }))
+      ),
       scan((acc: Post[], post: any) => [ ...acc, post], [])
     ).subscribe((result:any[]) => {
       let sequentialPost = result.find((post:any) => post.index === sequenceNumber);
