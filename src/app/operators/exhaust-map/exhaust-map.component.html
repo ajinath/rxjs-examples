@@ -1,0 +1,13 @@
+
+
+<button #fetchPost> 
+    Fetch Post
+</button>
+
+<p> Click Count - {{ clicksCount }} </p>
+<p> API Calls - {{ apiCallsCount }} </p>
+
+
+<div *ngIf= "post$ | async as post">
+    <div> {{ post.id }} - {{ post.body }} </div>
+</div>

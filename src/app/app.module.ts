@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareComponent } from './operators/share/share.component';
-import { HttpClientModule } from '@angular/common/http';
 import { SwitchMapComponent } from './operators/switch-map/switch-map.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MergeMapComponent } from './operators/merge-map/merge-map.component';
 import { ConcatMapComponent } from './operators/concat-map/concat-map.component';
+import { ExhaustMapComponent } from './operators/exhaust-map/exhaust-map.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ConcatMapComponent } from './operators/concat-map/concat-map.component'
     SwitchMapComponent,
     SwitchMapComponent,
     MergeMapComponent,
-    ConcatMapComponent
+    ConcatMapComponent,
+    ExhaustMapComponent
   ],
   imports: [
     BrowserModule,
