@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable, Subject, delay, exhaustMap, fromEvent, of, pipe, tap } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Observable, delay, exhaustMap, fromEvent, of, tap } from 'rxjs';
 import { AppService, Post } from '../../app.service';
 
 @Component({

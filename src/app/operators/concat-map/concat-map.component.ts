@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, Post } from '../../app.service';
-import { Observable, catchError, concatMap, delay, merge, of, pipe, scan, tap, zip } from 'rxjs';
+import { Observable, catchError, concatMap, delay, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-concat-map',
@@ -25,7 +25,7 @@ export class ConcatMapComponent implements OnInit {
       concatMap(post => this.appService.getCommentsByPostId(post.id)),
       tap(() =>  this.loading = false ),
       catchError( (err) => {
-        console.log('error');
+        console.log('error', err);
         return of([]);
       })
     );
