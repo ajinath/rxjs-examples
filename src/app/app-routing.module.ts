@@ -6,6 +6,7 @@ import { MergeMapComponent } from './operators/merge-map/merge-map.component';
 import { ConcatMapComponent } from './operators/concat-map/concat-map.component';
 import { ExhaustMapComponent } from './operators/exhaust-map/exhaust-map.component';
 import { AppComponent } from './app.component';
+import { MergeScanComponent } from './operators/merge-scan/merge-scan.component';
 
 const routes: Routes = [
   { 
@@ -24,6 +25,11 @@ const routes: Routes = [
     data: { title: 'switchMap' }
   },
   {
+    path: 'scan', 
+    component: MergeMapComponent,
+    data: { title: 'scan' }
+  },
+  {
     path: 'merge-map',
     component: MergeMapComponent,
     data: { title: 'mergeMap' }
@@ -37,6 +43,11 @@ const routes: Routes = [
     path: 'exhaust-map',
     component: ExhaustMapComponent,
     data: { title: 'exhaustMap' }
+  }, 
+  {
+    path: 'merge-scan',
+    component: MergeScanComponent,
+    data: { title: 'mergeScan'}
   }
 ];
 

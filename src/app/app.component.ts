@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
-import { Observable, filter, find, map, of, pipe, scan, tap, zip } from 'rxjs';
+import { ActivationEnd, Router } from '@angular/router';
+import { Observable, filter, of, scan } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,20 @@ import { Observable, filter, find, map, of, pipe, scan, tap, zip } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title$: Observable<string> = of('');
+
+  operators = {
+    transformation: [
+      { name: 'mergeMap', value: ['/merge-map'] },
+      { name: 'scan', value: ['/scan'] },
+      { name: 'switchMap', value: ['/switch-map'] },
+      { name: 'concatMap', value: ['/concat-map'] },
+      { name: 'exhaustMap', value: ['/exhaust-map'] },
+      { name: 'mergeScan', value: ['/merge-scan'] }
+    ],
+    multicating: [
+      { name: 'share', value: ['/share'] },
+    ]
+  }
 
   constructor(private router:Router) {
 

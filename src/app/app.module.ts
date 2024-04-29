@@ -10,6 +10,7 @@ import { SwitchMapComponent } from './operators/switch-map/switch-map.component'
 import { MergeMapComponent } from './operators/merge-map/merge-map.component';
 import { ConcatMapComponent } from './operators/concat-map/concat-map.component';
 import { ExhaustMapComponent } from './operators/exhaust-map/exhaust-map.component';
+import { MergeScanComponent } from './operators/merge-scan/merge-scan.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExhaustMapComponent } from './operators/exhaust-map/exhaust-map.compone
     SwitchMapComponent,
     MergeMapComponent,
     ConcatMapComponent,
-    ExhaustMapComponent
+    ExhaustMapComponent,
+    MergeScanComponent
   ],
   imports: [
     BrowserModule,
