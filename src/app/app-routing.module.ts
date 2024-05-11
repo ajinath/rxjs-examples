@@ -5,15 +5,11 @@ import { SwitchMapComponent } from './operators/switch-map/switch-map.component'
 import { MergeMapComponent } from './operators/merge-map/merge-map.component';
 import { ConcatMapComponent } from './operators/concat-map/concat-map.component';
 import { ExhaustMapComponent } from './operators/exhaust-map/exhaust-map.component';
-import { AppComponent } from './app.component';
 import { MergeScanComponent } from './operators/merge-scan/merge-scan.component';
+import { FilterComponent } from './operators/filter/filter.component';
+import { TotoListComponent } from './toto-list/toto-list.component';
 
 const routes: Routes = [
-  { 
-    path: '',
-    component: AppComponent,
-    data: { title: '' },
-  },
   { 
     path: 'share',
     component: ShareComponent,
@@ -48,6 +44,10 @@ const routes: Routes = [
     path: 'merge-scan',
     component: MergeScanComponent,
     data: { title: 'mergeScan'}
+  },
+  { 
+    path: 'toto-list',
+    component: TotoListComponent
   }
 ];
 

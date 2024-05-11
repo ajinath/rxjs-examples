@@ -13,15 +13,16 @@ export class AppComponent implements OnInit {
   operators = {
     transformation: [
       { name: 'mergeMap', value: ['/merge-map'] },
-      { name: 'scan', value: ['/scan'] },
       { name: 'switchMap', value: ['/switch-map'] },
       { name: 'concatMap', value: ['/concat-map'] },
       { name: 'exhaustMap', value: ['/exhaust-map'] },
+      { name: 'scan', value: ['/scan'] },
       { name: 'mergeScan', value: ['/merge-scan'] }
     ],
     multicating: [
       { name: 'share', value: ['/share'] },
-    ]
+    ],
+    filtering: []
   }
 
   constructor(private router:Router) {

@@ -1,0 +1,31 @@
+<div class="todo-wrapper">
+    <div> 
+        <form [formGroup]="todoForm" class="todo-form" (ngSubmit)="submitTodo()">
+            <div class="form-control"> 
+                <label>Todo Text : </label>
+                <input type="text" class="todo-input-text" formControlName="text" #todoText>
+                <ng-container *ngIf="textControl?.touched && textControl?.invalid" > 
+                    <p class="error" *ngIf="textControl?.errors?.['required']"> Todo text is required </p>
+                    <p class="error" *ngIf="textControl?.errors?.['minlength']"> Todo text atleast 2 char </p>
+                </ng-container>
+            </div>
+
+            <div class="form-control"> 
+                <input type="submit" [value]="actionStr">
+            </div>
+        </form>
+    </div>
+    <div class="todos-item"  *ngFor="let todo of todos; let i as index"> 
+        <div class="todo-status">
+            <input type="checkbox" [checked]="todo.completed" (change)="toggleTodoStatus(todo)"/>
+        </div>
+        <div class="todo-text" [ngClass]="{ 'completed-todo' : todo.completed }"> 
+            {{ todo.text }} 
+        </div>
+        <div class="actions">
+            <button (click)="editTodo(todo)"> Edit </button>  
+            <button (click)="deleteTodo(todo)"> Delete </button>
+        </div>
+    </div>
+</div>
+

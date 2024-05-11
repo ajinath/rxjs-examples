@@ -9,10 +9,12 @@
       <ng-container *ngTemplateOutlet="transformationOp; context: { operators: operators.transformation }"></ng-container>
       <h3> Multicasting Operators </h3>
       <ng-container *ngTemplateOutlet="transformationOp; context: { operators: operators.multicating }"></ng-container>
+      <h3> Filtering Operators </h3>
+      <ng-container *ngTemplateOutlet="transformationOp; context: { operators: operators.filtering }"></ng-container>
     </div>
   </div>
 
-  <div *ngIf="title$ | async as title" class="container">
+  <div *ngIf="title$ | async as title else otherTemp" class="container">
     <h3> 
       This example demonstrate the <code> {{ title }} </code> operator
     </h3>
@@ -21,18 +23,18 @@
 
 </div>
 
+<ng-template #otherTemp> 
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
+</ng-template>
+
  
 <ng-template #transformationOp let-operators="operators"> 
   <div class="operators-links">
-
     <ng-container *ngFor="let op of operators">
       <a [routerLink]=op.value>  <code> {{ op.name }}</code> </a> /
     </ng-container>
-    <!-- <a [routerLink]="['/share']"> <code> share </code></a> /
-    <a [routerLink]="['/switch-map']"> <code> switchMap </code></a> /
-    <a [routerLink]="['/merge-map']"> <code> mergeMap </code></a> /
-    <a [routerLink]="['/concat-map']"> <code> concatMap </code></a> /
-    <a [routerLink]="['/exhaust-map']"> <code> exhaustMap </code></a> /
-    <a [routerLink]="['/merge-scan']"> <code> mergeScan </code></a> -->
   </div>
 </ng-template>
